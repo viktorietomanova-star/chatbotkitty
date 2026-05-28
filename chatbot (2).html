@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kočičí Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="chatbot.css"/>
+</head>
+<body>
+<div class="shell">
+
+  <div class="header">
+    <div class="header-left">
+      <div class="cat-icon">🐱</div>
+      <div class="header-info">
+        <div class="header-name">Kočičí Průvodce</div>
+        <div class="header-sub">encyklopedie koček</div>
+      </div>
+    </div>
+    <div class="status-pill">
+      <span class="status-dot"></span>
+      online
+    </div>
+  </div>
+
+  <div class="chips" id="chips">
+    <span class="chip" onclick="sendChip('rasy koček')">🐈 Rasy koček</span>
+    <span class="chip" onclick="sendChip('mainská mývalí')">Mainská mývalí</span>
+    <span class="chip" onclick="sendChip('ragdoll')">Ragdoll</span>
+    <span class="chip" onclick="sendChip('siamská kočka')">Siamská</span>
+    <span class="chip" onclick="sendChip('bengálská kočka')">Bengálská</span>
+    <span class="chip" onclick="sendChip('perská kočka')">Perská</span>
+    <span class="chip" onclick="sendChip('nemoci koček')">⚕️ Nemoci</span>
+    <span class="chip" onclick="sendChip('co koupit pro kocku')">🛒 Co koupit</span>
+    <span class="chip" onclick="sendChip('očkování koček')">💉 Očkování</span>
+    <span class="chip" onclick="sendChip('kastrace kočky')">🩺 Kastrace</span>
+    <span class="chip" onclick="sendChip('proc kocky pradie')">Proč přadou?</span>
+    <span class="chip" onclick="sendChip('kolik hodin kocky spi')">Kolik spí?</span>
+  </div>
+
+  <div class="messages" id="messages"></div>
+
+  <div class="inputbar">
+    <input id="input" type="text" placeholder='Zeptej se na kočky… (nebo "konec")' autocomplete="off"/>
+    <button class="send-btn" id="sendBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="footer">🐾 kočičí encyklopedie · offline · žádný server</div>
+
+  <div class="overlay" id="overlay">
+    <div class="teach-card">
+      <h2>🐾 Tohle ještě nevím.</h2>
+      <p>Jak mám příště odpovědět na: <strong id="unknownSpan"></strong>?</p>
+      <input id="teachInput" type="text" placeholder="Zadej odpověď pro chatbota…" autocomplete="off"/>
+      <div class="teach-actions">
+        <button class="btn btn-cancel" id="cancelBtn">Zrušit</button>
+        <button class="btn btn-save"   id="saveBtn">Uložit</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="chatbot.js"></script>
+</body>
+</html>
